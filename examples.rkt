@@ -49,5 +49,16 @@
   (let* ([xs (+ xs 3)]
          [ys (+ xs 2)]) ; ys is bound to xs in the environment
     (+ xs ys )))
+; letrec
+(define (double3 x)
+  (letrec ([y (+ x 2)]
+           [f (lambda (z) (+ z y w x))]
+           [w (+ x 7)])
+    (f -9)))
+; local define
+(define (mod-one xs)
+  (define (even? xs) (if (zero? xs) #t (odd?  (- xs 1))))
+  (define (odd? xs)  (if (zero? xs) #f (even? (- xs 1))))
+  (if (even? xs) 0 1))
 
   
